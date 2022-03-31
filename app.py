@@ -347,7 +347,7 @@ elif seleted == 'Overall':
     "KNN": KNeighborsClassifier(),
     "AdaBoost": AdaBoostClassifier(),
     "Skl GBM":GradientBoostingClassifier(),
-    #"XGBoost":XGBClassifier(),
+    "XGBoost":XGBClassifier(),
     "LightGBM":LGBMClassifier(),
     "CatBoost":CatBoostClassifier()
     }
