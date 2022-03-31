@@ -17,10 +17,15 @@ import streamlit as st
 import pandas as pd
 import time
 
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors     import KNeighborsClassifier
+from sklearn.tree          import DecisionTreeClassifier
+from sklearn.ensemble      import RandomForestClassifier
+from sklearn.ensemble      import ExtraTreesClassifier
+from sklearn.ensemble      import AdaBoostClassifier
+from sklearn.ensemble      import GradientBoostingClassifier
+from xgboost               import XGBClassifier
+from lightgbm              import LGBMClassifier
+from catboost              import CatBoostClassifier
 from sklearn.decomposition import PCA
 
 from sklearn.metrics import accuracy_score, balanced_accuracy_score
@@ -339,12 +344,12 @@ elif seleted == 'Overall':
     "Decision Tree": DecisionTreeClassifier(),
     "Extra Trees":ExtraTreesClassifier(),
     "Random Forest": RandomForestClassifier(),
-    #"KNN": KNeighborsClassifier()
-    #"AdaBoost":AdaBoostClassifier(),
-    #"Skl GBM":GradientBoostingClassifier(),
-    #"XGBoost":XGBClassifier(),
-    #"LightGBM":LGBMClassifier(),
-    #"CatBoost":CatBoostClassifier()
+    "KNN": KNeighborsClassifier(),
+    "AdaBoost": AdaBoostClassifier(),
+    "Skl GBM":GradientBoostingClassifier(),
+    "XGBoost":XGBClassifier(),
+    "LightGBM":LGBMClassifier(),
+    "CatBoost":CatBoostClassifier()
     }
 
     tree_classifiers = {name: make_pipeline(model) for name, model in tree_classifiers.items()}
